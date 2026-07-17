@@ -1,0 +1,38 @@
+redact:
+  person_names: true
+  emails: true
+  phone_numbers: true
+  company_names: true
+  addresses: true
+  cin_numbers: true
+  pan_numbers: true
+  aadhaar: true
+  dates_of_birth: true
+  ip_addresses: true
+  urls: true
+  credit_cards: true
+
+settings:
+  confidence_threshold: 0.45
+  spacy_model: en_core_web_sm
+  faker_locale: en_IN
+  consistent_replacements: true
+  log_file: redaction.log
+
+org_whitelist:
+  - "SEBI"
+  - "NSE"
+  - "BSE"
+  - "RBI"
+  - "MCA"
+  - "NCLT"
+  - "NSDL"
+  - "CDSL"
+  - "IRDAI"
+  - "FEMA"
+  - "PMLA"
+  - "Securities and Exchange Board of India"
+  - "National Stock Exchange"
+  - "Bombay Stock Exchange"
+  - "Reserve Bank of India"
+  - "Ministry of Corporate Affairs"

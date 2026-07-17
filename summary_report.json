@@ -1,0 +1,19 @@
+{
+  "document": "Red Herring Prospectus.docx",
+  "timestamp": "2026-07-17T19:06:24",
+  "processing_time_seconds": 129.51,
+  "memory_peak_mb": 84.6,
+  "total_pii_detected": 9264,
+  "by_type": {
+    "EMAIL_ADDRESS": 66,
+    "IN_CIN": 9,
+    "IN_PHONE_NUMBER": 40,
+    "LOCATION": 1025,
+    "NRP": 98,
+    "ORGANIZATION": 4317,
+    "PERSON": 3547,
+    "PHONE_NUMBER": 10,
+    "URL": 119,
+    "WEBSITE_URL": 33
+  }
+}
