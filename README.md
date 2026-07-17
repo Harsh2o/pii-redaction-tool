@@ -1,5 +1,9 @@
 # PII Redaction Tool
 
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Assignment%20Submission-success)
+
 This project implements a hybrid PII redaction pipeline using Microsoft Presidio, custom regex recognizers, and document derived entity extraction. It is designed to accurately detect and redact Personally Identifiable Information (PII) from `.docx` files while preserving the original document formatting.
 
 ## Example Output
@@ -8,6 +12,18 @@ This project implements a hybrid PII redaction pipeline using Microsoft Presidio
 - Processing time: 129s
 - Peak memory: 84.6MB
 - Total entities detected: 9264
+
+### Before / After
+
+```text
+Before:
+Sarthak Malvadkar
+cs.connect@kshinternational.com
+
+After:
+Rahul Sharma
+rahul.sharma@example.com
+```
 
 ## Architecture
 
@@ -56,19 +72,36 @@ The tool uses a multi stage approach to ensure high recall without sacrificing f
 - **Consistent Redaction:** Uses `Faker` with a caching mechanism to ensure the same real entity is always mapped to the same fake entity across the document.
 - **Evaluation Pipeline:** Includes a built in testing script that calculates Precision, Recall, and F1 Score against a deterministic ground truth subset.
 
-## Installation
+## Project Structure
 
-```bash
-pip install presidio-analyzer presidio-anonymizer python-docx faker scikit-learn pyyaml spacy tqdm
-python -m spacy download en_core_web_sm
+```text
+PII-Redaction-Tool/
+├── tests/
+├── redact.py
+├── recognizers.py
+├── anonymizers.py
+├── evaluator.py
+├── ground_truth.py
+├── config.yaml
+├── requirements.txt
+└── README.md
 ```
 
-## Usage
+## Quick Start
 
 ```bash
+git clone https://github.com/Harsh2o/pii-redaction-tool.git
+cd pii-redaction-tool
+pip install -r requirements.txt
+python -m spacy download en_core_web_sm
+
 # Basic redaction
 python redact.py --input "Red Herring Prospectus.docx" --output redacted_output.docx
+```
 
+
+## Usage
+```bash
 # Run with higher accuracy (uses en_core_web_lg model)
 python redact.py --input "Red Herring Prospectus.docx" --output redacted_output.docx --high-accuracy
 
