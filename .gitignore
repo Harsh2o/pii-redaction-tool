@@ -11,3 +11,5 @@ ENV/
 .idea/
 .vscode/
 *.log
+*.docx
+*.json

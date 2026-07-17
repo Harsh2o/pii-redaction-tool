@@ -1,0 +1,9 @@
+presidio-analyzer
+presidio-anonymizer
+python-docx
+faker
+spacy
+tqdm
+pyyaml
+pytest
+scikit-learn
