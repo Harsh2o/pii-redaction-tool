@@ -2,6 +2,13 @@
 
 This project implements a hybrid PII redaction pipeline using Microsoft Presidio, custom regex recognizers, and document derived entity extraction. It is designed to accurately detect and redact Personally Identifiable Information (PII) from `.docx` files while preserving the original document formatting.
 
+## Example Output
+
+- Document size: 1006 paragraphs
+- Processing time: 129s
+- Peak memory: 84.6MB
+- Total entities detected: 9264
+
 ## Architecture
 
 The tool uses a multi stage approach to ensure high recall without sacrificing formatting integrity:
@@ -73,15 +80,6 @@ python redact.py --input "Red Herring Prospectus.docx" --output redacted_output.
 
 # Run unit tests
 python -m pytest tests/ -v
-```
-
-### Example Run Output
-
-```text
-- Document size: 1006 paragraphs, 76 tables
-- Processing time: 140 seconds
-- Peak memory: 805 MB
-- PII instances detected: 993
 ```
 
 ## Configuration
